@@ -103,36 +103,33 @@ export default function Hero({ onNavigate, onNavigateAuth }) {
           {/* Columna derecha: Distintivo UCV Virtual y Video Oficial */}
           <div className="lg:col-span-5 flex flex-col gap-3.5">
             
-            {/* DISTINTIVO OFICIAL DE CO-BRANDING (Los 2 logos: WarmiClass & UCV Virtual) */}
+            {/* DISTINTIVO OFICIAL UCV VIRTUAL (Los 2 logos: ucv-virtual-logo.png y ucv-virtual.png) */}
             <div className="p-3 sm:p-3.5 rounded-2xl bg-white/15 hover:bg-white/20 backdrop-blur-md border border-white/25 shadow-xl flex items-center justify-between gap-3 transition-all group">
               <div className="flex items-center gap-2.5 sm:gap-3">
-                {/* 1. Logo WarmiClass */}
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-red-700 to-red-900 border border-amber-400/40 p-1 flex items-center justify-center shadow-md shrink-0 group-hover:scale-105 transition-transform">
+                {/* 1. Logo Banner UCV Virtual */}
+                <div className="rounded-xl overflow-hidden shadow-md shrink-0 group-hover:scale-105 transition-transform flex items-center justify-center">
                   <img
-                    src="/logowarmi.png"
-                    alt="Logo WarmiClass PRONOEI"
-                    className="w-full h-full object-contain filter drop-shadow"
+                    src="/ucv-virtual-logo.png"
+                    alt="Universidad César Vallejo Virtual"
+                    className="h-8 sm:h-9 w-auto object-contain rounded-lg"
                   />
                 </div>
 
-                {/* Conector de alianza */}
-                <span className="text-amber-300 font-black text-xs">✕</span>
-
-                {/* 2. Logo UCV Virtual */}
-                <div className="bg-white px-2.5 py-1.5 rounded-xl shadow-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                {/* 2. Logo Píldora UCV Virtual */}
+                <div className="bg-white px-2.5 py-1 rounded-xl shadow-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   <img
                     src="/ucv-virtual.png"
-                    alt="Logo Oficial UCV Virtual"
+                    alt="Logo UCV Virtual"
                     className="h-7 sm:h-8 w-auto object-contain"
                   />
                 </div>
 
                 {/* Textos descriptivos de la alianza */}
-                <div className="text-left leading-tight hidden xs:block">
+                <div className="text-left leading-tight hidden xl:block">
                   <span className="text-[10px] font-black uppercase tracking-wider text-amber-300 block">
                     Convenio Interinstitucional
                   </span>
-                  <span className="text-xs sm:text-sm font-extrabold text-white">
+                  <span className="text-xs font-extrabold text-white">
                     UCV Virtual & DRE Loreto
                   </span>
                 </div>
