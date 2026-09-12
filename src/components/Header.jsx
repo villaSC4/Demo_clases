@@ -89,16 +89,6 @@ export default function Header({
             </div>
           </button>
 
-          {/* SELLO OFICIAL DE CONVENIO UCV VIRTUAL */}
-          <div className="hidden lg:flex items-center gap-2 pl-3 ml-1 border-l border-stone-200">
-            <span className="text-[10px] uppercase tracking-wider font-extrabold text-stone-400">Convenio</span>
-            <img
-              src="/ucv-virtual-logo.png"
-              alt="Logo Oficial UCV Virtual"
-              className="h-7 w-auto object-contain rounded-md shadow-2xs hover:scale-105 transition-transform"
-            />
-          </div>
-
           {/* NAVEGACIÓN MULTIPÁGINA EN 1 LÍNEA (WHITESPACE-NOWRAP) */}
           <nav className="hidden xl:flex items-center gap-1">
             {navItems.map((item) => {
@@ -294,16 +284,6 @@ export default function Header({
                   <span>{item.label}</span>
                 </button>
               ))}
-
-              {/* Distintivo de Convenio en Menú Móvil */}
-              <div className="pt-3 mt-2 border-t border-stone-100 flex items-center justify-between px-2">
-                <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider">Convenio Oficial:</span>
-                <img
-                  src="/ucv-virtual-logo.png"
-                  alt="Logo UCV Virtual"
-                  className="h-6 w-auto object-contain rounded"
-                />
-              </div>
             </nav>
           </div>
         )}

@@ -26,7 +26,7 @@ export default function CertificateGenerator({
     let active = true;
 
     const imgUcv = new Image();
-    imgUcv.src = '/ucv-virtual-logo.png';
+    imgUcv.src = '/ucv-virtual.png';
     imgUcv.onload = () => {
       if (active) {
         ucvLogoImgRef.current = imgUcv;
@@ -267,11 +267,11 @@ export default function CertificateGenerator({
         {/* Banner Institucional de Respaldo Oficial UCV Virtual */}
         <div className="mb-8 p-5 sm:p-7 rounded-3xl bg-gradient-to-r from-blue-900 via-blue-950 to-stone-950 text-white border border-blue-600/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 reveal">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 text-center sm:text-left">
-            <div className="p-2.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg shrink-0">
+            <div className="bg-white p-2 rounded-2xl shadow-lg shrink-0 flex items-center justify-center">
               <img
-                src="/ucv-virtual-logo.png"
+                src="/ucv-virtual.png"
                 alt="Logo Oficial UCV Virtual"
-                className="h-12 sm:h-14 w-auto object-contain rounded-xl shadow-md"
+                className="h-10 sm:h-12 w-auto object-contain"
               />
             </div>
             <div>
@@ -354,9 +354,9 @@ export default function CertificateGenerator({
             <div className="bg-stone-900 text-white px-4 py-2.5 flex items-center justify-between border-b border-stone-800">
               <div className="flex items-center gap-3">
                 <img
-                  src="/ucv-virtual-logo.png"
+                  src="/ucv-virtual.png"
                   alt="UCV Virtual"
-                  className="h-6 w-auto object-contain rounded"
+                  className="h-6 w-auto object-contain bg-white px-2 py-0.5 rounded"
                 />
                 <span className="text-[11px] font-bold text-stone-300 hidden sm:inline">
                   Previsualización Digital del Certificado Académico Oficial

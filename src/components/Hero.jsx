@@ -38,22 +38,10 @@ export default function Hero({ onNavigate, onNavigateAuth }) {
           
           {/* Contenido textual con animación de entrada */}
           <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-200 text-xs font-semibold backdrop-blur-sm animate-fade-in shadow-xs">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                <i className="fa-solid fa-seedling text-amber-400 animate-wiggle"></i>
-                <span>ESTRATEGIA FORMATIVA PRONOEI 2026</span>
-              </div>
-
-              {/* Distintivo Oficial UCV Virtual */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md text-white text-xs font-bold shadow-md transition-all">
-                <img
-                  src="/ucv-virtual-logo.png"
-                  alt="UCV Virtual"
-                  className="h-6 w-auto object-contain rounded-md shadow-2xs"
-                />
-                <span className="text-[11px] text-amber-300 font-semibold">• Acreditación Universitaria</span>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-200 text-xs font-semibold backdrop-blur-sm animate-fade-in shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              <i className="fa-solid fa-seedling text-amber-400 animate-wiggle"></i>
+              <span>ESTRATEGIA FORMATIVA DE EDUCACIÓN INICIAL COMUNITARIA 2026</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white font-['Poppins'] animate-slide-up">
@@ -112,8 +100,36 @@ export default function Hero({ onNavigate, onNavigateAuth }) {
             </div>
           </div>
 
-          {/* Video oficial MINEDU con marco animado */}
-          <div className="lg:col-span-5">
+          {/* Columna derecha: Distintivo UCV Virtual y Video Oficial */}
+          <div className="lg:col-span-5 flex flex-col gap-3.5">
+            
+            {/* DISTINTIVO OFICIAL UCV VIRTUAL (Posición solicitada sobre el video) */}
+            <div className="p-3 sm:p-3.5 rounded-2xl bg-white/15 hover:bg-white/20 backdrop-blur-md border border-white/25 shadow-xl flex items-center justify-between gap-3 transition-all group">
+              <div className="flex items-center gap-3">
+                <div className="bg-white px-2.5 py-1.5 rounded-xl shadow-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <img
+                    src="/ucv-virtual.png"
+                    alt="Logo Oficial UCV Virtual"
+                    className="h-8 sm:h-9 w-auto object-contain"
+                  />
+                </div>
+                <div className="text-left leading-tight">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-amber-300 block">
+                    Convenio Interinstitucional
+                  </span>
+                  <span className="text-xs sm:text-sm font-extrabold text-white">
+                    UCV Virtual & DRE Loreto
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-400 text-stone-950 text-[10px] font-black uppercase tracking-wider shrink-0 shadow-sm">
+                <i className="fa-solid fa-award"></i>
+                <span>5.0 Créditos</span>
+              </div>
+            </div>
+
+            {/* Video oficial MINEDU con marco animado */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-amber-400/30 hover:border-amber-400/60 transition-all duration-500 bg-black/60 group hover:shadow-amber-500/20">
               <div className="aspect-video w-full">
                 <iframe
