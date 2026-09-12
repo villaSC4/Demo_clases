@@ -103,17 +103,32 @@ export default function Hero({ onNavigate, onNavigateAuth }) {
           {/* Columna derecha: Distintivo UCV Virtual y Video Oficial */}
           <div className="lg:col-span-5 flex flex-col gap-3.5">
             
-            {/* DISTINTIVO OFICIAL UCV VIRTUAL (Posición solicitada sobre el video) */}
+            {/* DISTINTIVO OFICIAL DE CO-BRANDING (Los 2 logos: WarmiClass & UCV Virtual) */}
             <div className="p-3 sm:p-3.5 rounded-2xl bg-white/15 hover:bg-white/20 backdrop-blur-md border border-white/25 shadow-xl flex items-center justify-between gap-3 transition-all group">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5 sm:gap-3">
+                {/* 1. Logo WarmiClass */}
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-red-700 to-red-900 border border-amber-400/40 p-1 flex items-center justify-center shadow-md shrink-0 group-hover:scale-105 transition-transform">
+                  <img
+                    src="/logowarmi.png"
+                    alt="Logo WarmiClass PRONOEI"
+                    className="w-full h-full object-contain filter drop-shadow"
+                  />
+                </div>
+
+                {/* Conector de alianza */}
+                <span className="text-amber-300 font-black text-xs">✕</span>
+
+                {/* 2. Logo UCV Virtual */}
                 <div className="bg-white px-2.5 py-1.5 rounded-xl shadow-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   <img
                     src="/ucv-virtual.png"
                     alt="Logo Oficial UCV Virtual"
-                    className="h-8 sm:h-9 w-auto object-contain"
+                    className="h-7 sm:h-8 w-auto object-contain"
                   />
                 </div>
-                <div className="text-left leading-tight">
+
+                {/* Textos descriptivos de la alianza */}
+                <div className="text-left leading-tight hidden xs:block">
                   <span className="text-[10px] font-black uppercase tracking-wider text-amber-300 block">
                     Convenio Interinstitucional
                   </span>

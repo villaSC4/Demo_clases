@@ -99,33 +99,45 @@ export default function OpeningIntro({ onComplete }) {
         }`}
       >
         
-        {/* Logo Oficial WarmiClass PRONOEI */}
-        <div className="relative mb-6">
-          <div className="absolute -inset-4 bg-gradient-to-r from-red-600 via-amber-500 to-red-600 rounded-3xl blur-xl opacity-60 animate-pulse"></div>
+        {/* Emblemas Institucionales: Los 2 Logos Oficiales (WarmiClass & UCV Virtual) */}
+        <div className="relative mb-6 flex items-center justify-center gap-3 sm:gap-4">
+          <div className="absolute -inset-4 bg-gradient-to-r from-red-600 via-amber-500 to-blue-600 rounded-3xl blur-2xl opacity-60 animate-pulse"></div>
           
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br from-red-700 via-red-800 to-brand-darkRed border-2 border-amber-400/80 shadow-2xl flex items-center justify-center p-3.5 sm:p-4">
+          {/* 1. Emblema WarmiClass PRONOEI */}
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br from-red-700 via-red-800 to-brand-darkRed border-2 border-amber-400/80 shadow-2xl flex items-center justify-center p-3.5 sm:p-4 group">
             <img
               src="/logowarmi.png"
               alt="Logo WarmiClass PRONOEI"
               className="w-full h-full object-contain filter drop-shadow animate-pulse-subtle"
             />
+            <div className="absolute -bottom-2 -left-1 px-2 py-0.5 rounded-full bg-amber-400 text-stone-950 font-black text-[9px] uppercase tracking-wider shadow-md">
+              PRONOEI
+            </div>
           </div>
 
-          <div className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-amber-400 text-stone-950 font-black text-[10px] uppercase tracking-wider shadow-md">
-            2026
+          {/* Conector de Alianza Institucional */}
+          <div className="relative z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-stone-900/90 border border-amber-400/60 flex items-center justify-center text-amber-300 text-xs font-black shadow-lg">
+            <i className="fa-solid fa-xmark text-[10px]"></i>
+          </div>
+
+          {/* 2. Emblema UCV Virtual */}
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white border-2 border-blue-500/80 shadow-2xl flex items-center justify-center p-2.5 sm:p-3 group">
+            <img
+              src="/ucv-virtual.png"
+              alt="Logo UCV Virtual"
+              className="w-full h-full object-contain filter drop-shadow animate-pulse-subtle"
+            />
+            <div className="absolute -bottom-2 -right-1 px-2 py-0.5 rounded-full bg-blue-600 text-white font-black text-[9px] uppercase tracking-wider shadow-md">
+              UCV
+            </div>
           </div>
         </div>
 
         {/* Título de Marca */}
         <div className="space-y-1.5 mb-5">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-amber-300 text-xs font-bold tracking-wider uppercase mb-1 backdrop-blur-md shadow-md">
-            <img
-              src="/ucv-virtual-logo.png"
-              alt="Logo UCV Virtual"
-              className="h-6 w-auto object-contain rounded-md shadow-2xs"
-            />
-            <span className="text-white font-black">&</span>
-            <span>DRE Loreto</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-amber-300 text-xs font-bold tracking-wider uppercase mb-1 backdrop-blur-md shadow-md">
+            <i className="fa-solid fa-shield-halved text-xs text-amber-400"></i>
+            <span>Alianza Oficial UCV Virtual & DRE Loreto</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-black text-white font-['Poppins'] tracking-tight">
