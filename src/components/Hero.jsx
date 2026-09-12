@@ -103,11 +103,26 @@ export default function Hero({ onNavigate, onNavigateAuth }) {
           {/* Columna derecha: Distintivo UCV Virtual y Video Oficial */}
           <div className="lg:col-span-5 flex flex-col gap-3.5">
             
-            {/* DISTINTIVO OFICIAL UCV VIRTUAL (Los 2 logos: ucv-virtual-logo.png y ucv-virtual.png) */}
-            <div className="p-3 sm:p-3.5 rounded-2xl bg-white/15 hover:bg-white/20 backdrop-blur-md border border-white/25 shadow-xl flex items-center justify-between gap-3 transition-all group">
-              <div className="flex items-center gap-2.5 sm:gap-3">
-                {/* 1. Logo Banner UCV Virtual */}
-                <div className="rounded-xl overflow-hidden shadow-md shrink-0 group-hover:scale-105 transition-transform flex items-center justify-center">
+            {/* DISTINTIVO OFICIAL UCV VIRTUAL (Diseño espacioso, ordenado y sin sobreposiciones) */}
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white/15 hover:bg-white/20 backdrop-blur-md border border-white/25 shadow-xl transition-all group space-y-2.5">
+              
+              {/* Fila 1: Encabezado institucional y badge de créditos */}
+              <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-2">
+                <div className="flex items-center gap-1.5 text-amber-300 text-[11px] font-extrabold uppercase tracking-wider">
+                  <i className="fa-solid fa-graduation-cap text-xs"></i>
+                  <span>Convenio Oficial • UCV Virtual & DRE Loreto</span>
+                </div>
+                
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-400 text-stone-950 text-[10px] font-black uppercase tracking-wider shadow-xs shrink-0 whitespace-nowrap">
+                  <i className="fa-solid fa-award text-xs"></i>
+                  <span>5.0 Créditos</span>
+                </div>
+              </div>
+
+              {/* Fila 2: Los 2 Logos Oficiales de UCV Virtual con espacio generoso */}
+              <div className="flex items-center gap-3 pt-0.5">
+                {/* 1. Logo Banner Azul UCV Virtual */}
+                <div className="rounded-xl overflow-hidden shadow-md flex items-center justify-center shrink-0 group-hover:scale-102 transition-transform">
                   <img
                     src="/ucv-virtual-logo.png"
                     alt="Universidad César Vallejo Virtual"
@@ -115,30 +130,18 @@ export default function Hero({ onNavigate, onNavigateAuth }) {
                   />
                 </div>
 
-                {/* 2. Logo Píldora UCV Virtual */}
-                <div className="bg-white px-2.5 py-1 rounded-xl shadow-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <span className="text-white/25 text-xs font-light select-none">|</span>
+
+                {/* 2. Logo Píldora Blanca UCV Virtual */}
+                <div className="bg-white px-3 py-1 rounded-xl shadow-md flex items-center justify-center shrink-0 group-hover:scale-102 transition-transform">
                   <img
                     src="/ucv-virtual.png"
                     alt="Logo UCV Virtual"
-                    className="h-7 sm:h-8 w-auto object-contain"
+                    className="h-6 sm:h-7 w-auto object-contain"
                   />
                 </div>
-
-                {/* Textos descriptivos de la alianza */}
-                <div className="text-left leading-tight hidden xl:block">
-                  <span className="text-[10px] font-black uppercase tracking-wider text-amber-300 block">
-                    Convenio Interinstitucional
-                  </span>
-                  <span className="text-xs font-extrabold text-white">
-                    UCV Virtual & DRE Loreto
-                  </span>
-                </div>
               </div>
 
-              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-400 text-stone-950 text-[10px] font-black uppercase tracking-wider shrink-0 shadow-sm">
-                <i className="fa-solid fa-award"></i>
-                <span>5.0 Créditos</span>
-              </div>
             </div>
 
             {/* Video oficial MINEDU con marco animado */}
