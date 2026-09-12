@@ -38,10 +38,22 @@ export default function Hero({ onNavigate, onNavigateAuth }) {
           
           {/* Contenido textual con animación de entrada */}
           <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-200 text-xs font-semibold backdrop-blur-sm animate-fade-in shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-              <i className="fa-solid fa-seedling text-amber-400 animate-wiggle"></i>
-              <span>ESTRATEGIA FORMATIVA DE EDUCACIÓN INICIAL COMUNITARIA 2026</span>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-200 text-xs font-semibold backdrop-blur-sm animate-fade-in shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                <i className="fa-solid fa-seedling text-amber-400 animate-wiggle"></i>
+                <span>ESTRATEGIA FORMATIVA PRONOEI 2026</span>
+              </div>
+
+              {/* Distintivo Oficial UCV Virtual */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md text-white text-xs font-bold shadow-md transition-all">
+                <img
+                  src="/ucv-virtual-logo.png"
+                  alt="UCV Virtual"
+                  className="h-6 w-auto object-contain rounded-md shadow-2xs"
+                />
+                <span className="text-[11px] text-amber-300 font-semibold">• Acreditación Universitaria</span>
+              </div>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white font-['Poppins'] animate-slide-up">
@@ -93,9 +105,9 @@ export default function Hero({ onNavigate, onNavigateAuth }) {
                 <i className="fa-solid fa-map-location-dot text-amber-400"></i>
                 <span>Región Loreto (5 UGEL)</span>
               </div>
-              <div className="flex items-center gap-2 hover:text-white transition-colors">
-                <i className="fa-solid fa-award text-amber-400"></i>
-                <span>120 Horas / 5.0 Créditos UCV</span>
+              <div className="flex items-center gap-2 hover:text-white transition-colors bg-white/10 px-2.5 py-1 rounded-xl border border-white/15">
+                <img src="/ucv-virtual-logo.png" alt="UCV Virtual" className="h-4 w-auto object-contain rounded" />
+                <span>120 Horas / 5.0 Créditos SUNEDU</span>
               </div>
             </div>
           </div>

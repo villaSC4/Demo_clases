@@ -16,8 +16,14 @@ export default function DocumentExplorer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-12 reveal">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wider mb-3">
-            <i className="fa-regular fa-file-word text-blue-600"></i> Expediente Técnico Completo
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wider">
+              <i className="fa-regular fa-file-word text-blue-600"></i> Expediente Técnico Completo
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 border border-stone-200 text-stone-700 text-xs font-bold shadow-2xs">
+              <img src="/ucv-virtual-logo.png" alt="Logo UCV Virtual" className="h-5 w-auto object-contain rounded" />
+              <span>Acreditado por UCV Virtual</span>
+            </div>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-stone-900 font-['Poppins']">
             Propuesta Formativa Oficial PRONOEI 2026

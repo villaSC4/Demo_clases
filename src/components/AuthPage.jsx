@@ -165,9 +165,14 @@ export default function AuthPage({ onLoginSuccess, onBackToLanding }) {
                     2026
                   </span>
                 </div>
-                <h3 className="text-base font-extrabold text-white">
-                  UCV Virtual & DRE Loreto
-                </h3>
+                <div className="mt-1 flex items-center gap-2">
+                  <img
+                    src="/ucv-virtual-logo.png"
+                    alt="Logo UCV Virtual"
+                    className="h-8 w-auto object-contain rounded-md shadow-xs"
+                  />
+                  <span className="text-white text-xs font-bold">& DRE Loreto</span>
+                </div>
               </div>
             </div>
 
@@ -258,21 +263,30 @@ export default function AuthPage({ onLoginSuccess, onBackToLanding }) {
               <span>Volver al Portal</span>
             </button>
 
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-700 to-red-900 border border-amber-400/30 p-1 shadow-sm flex items-center justify-center">
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:block">
                 <img
-                  src="/logowarmi.png"
-                  alt="Logo WarmiClass"
-                  className="w-full h-full object-contain filter drop-shadow"
+                  src="/ucv-virtual-logo.png"
+                  alt="Logo UCV Virtual"
+                  className="h-7 w-auto object-contain rounded-md shadow-2xs"
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-stone-900 text-sm leading-tight">
-                  WarmiClass <span className="text-red-700">PRONOEI</span>
-                </span>
-                <span className="text-[10px] text-stone-500 font-medium">
-                  Campus Virtual Loreto
-                </span>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-red-700 to-red-900 border border-amber-400/30 p-1 shadow-sm flex items-center justify-center">
+                  <img
+                    src="/logowarmi.png"
+                    alt="Logo WarmiClass"
+                    className="w-full h-full object-contain filter drop-shadow"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-extrabold text-stone-900 text-sm leading-tight">
+                    WarmiClass <span className="text-red-700">PRONOEI</span>
+                  </span>
+                  <span className="text-[10px] text-stone-500 font-medium">
+                    Campus Virtual Loreto
+                  </span>
+                </div>
               </div>
             </div>
           </div>

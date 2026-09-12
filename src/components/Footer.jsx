@@ -33,6 +33,19 @@ export default function Footer({ onNavigate, onReplayIntro }) {
               Plataforma virtual de fortalecimiento pedagógico para Promotoras Educativas Comunitarias (PEC) y Profesoras Coordinadoras de la Región Loreto. Impulsado por la Universidad César Vallejo y la DRE Loreto.
             </p>
 
+            {/* Distintivo de Convenio UCV Virtual */}
+            <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-3 shadow-xs">
+              <img
+                src="/ucv-virtual-logo.png"
+                alt="Logo UCV Virtual"
+                className="h-9 w-auto object-contain rounded-lg shadow-sm"
+              />
+              <div className="text-[11px] leading-tight text-stone-300">
+                <span className="font-bold text-white block">Convenio UCV Virtual</span>
+                <span className="text-stone-400">120 Horas Lectivas • 5.0 Créditos Oficiales</span>
+              </div>
+            </div>
+
             <div className="pt-2 flex items-center gap-3 text-stone-400">
               <a href="#" className="w-8 h-8 rounded-lg bg-stone-900 hover:bg-red-700 hover:text-white flex items-center justify-center transition-colors">
                 <i className="fa-brands fa-facebook-f text-xs"></i>
@@ -138,7 +151,14 @@ export default function Footer({ onNavigate, onReplayIntro }) {
 
         {/* Copyright inferior */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400 text-center sm:text-left">
-          <p>© 2026 WarmiClass PRONOEI. Universidad César Vallejo & Dirección Regional de Educación de Loreto.</p>
+          <div className="flex items-center gap-3">
+            <img
+              src="/ucv-virtual-logo.png"
+              alt="UCV Virtual"
+              className="h-6 w-auto object-contain rounded opacity-80 hover:opacity-100 transition-opacity"
+            />
+            <p>© 2026 WarmiClass PRONOEI. Universidad César Vallejo & Dirección Regional de Educación de Loreto.</p>
+          </div>
           
           <div className="flex items-center gap-4">
             <p className="text-stone-400 hidden md:inline">

@@ -57,6 +57,30 @@ export default function ObjectiveSection() {
               El objetivo de <strong>WarmiClass PRONOEI 2026</strong> es saldar esa deuda histórica: brindarles un entorno digital y presencial adaptado a la geografía de la selva, con guías descargables, sesiones Zoom, rúbricas de portafolio y un <strong>título oficial con valor universitario</strong> emitido por la <strong>Universidad César Vallejo</strong> en convenio con la <strong>DRE Loreto</strong>.
             </p>
 
+            {/* Tarjeta de Acreditación Oficial UCV Virtual */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900 via-blue-950 to-stone-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4 border border-blue-700/50 shadow-md">
+              <div className="flex items-center gap-3.5">
+                <div className="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shrink-0">
+                  <img
+                    src="/ucv-virtual-logo.png"
+                    alt="Logo Oficial UCV Virtual"
+                    className="h-9 w-auto object-contain rounded-md shadow-xs"
+                  />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-white block">
+                    Certificación Oficial con Rango Universitario
+                  </span>
+                  <span className="text-[11px] text-blue-200">
+                    120 Horas Lectivas • 5.0 Créditos Oficiales (Art. 39 - Ley 30220)
+                  </span>
+                </div>
+              </div>
+              <span className="px-3 py-1 rounded-full bg-amber-400 text-stone-950 font-black text-[11px] tracking-wider uppercase shrink-0 shadow-sm">
+                Validez Nacional
+              </span>
+            </div>
+
             <div className="pt-3 border-t border-stone-100 flex flex-wrap items-center gap-4 text-xs font-semibold text-stone-700">
               <span className="flex items-center gap-1.5 text-emerald-700">
                 <i className="fa-solid fa-circle-check"></i> 100% Gratuito

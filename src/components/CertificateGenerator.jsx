@@ -10,6 +10,8 @@ export default function CertificateGenerator({
   setSelectedUgel
 }) {
   const canvasRef = useRef(null);
+  const ucvLogoImgRef = useRef(null);
+  const warmiLogoImgRef = useRef(null);
 
   const ugels = [
     "UGEL Maynas (Iquitos)",
@@ -19,9 +21,50 @@ export default function CertificateGenerator({
     "UGEL Ucayali (Contamana)"
   ];
 
+  // Pre-cargar imágenes institucionales para el canvas
+  useEffect(() => {
+    let active = true;
+
+    const imgUcv = new Image();
+    imgUcv.src = '/ucv-virtual-logo.png';
+    imgUcv.onload = () => {
+      if (active) {
+        ucvLogoImgRef.current = imgUcv;
+        renderCertificate();
+      }
+    };
+
+    const imgWarmi = new Image();
+    imgWarmi.src = '/logowarmi.png';
+    imgWarmi.onload = () => {
+      if (active) {
+        warmiLogoImgRef.current = imgWarmi;
+        renderCertificate();
+      }
+    };
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
   useEffect(() => {
     renderCertificate();
   }, [pecName, pecDni, selectedUgel]);
+
+  const drawRoundRectPath = (ctx, x, y, width, height, radius) => {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+  };
 
   const renderCertificate = () => {
     const canvas = canvasRef.current;
@@ -45,16 +88,62 @@ export default function CertificateGenerator({
     ctx.strokeStyle = "#d4af37";
     ctx.strokeRect(36, 36, canvas.width - 72, canvas.height - 72);
 
-    // Encabezado institucional
+    // =========================================================================
+    // DIBUJAR LOGO OFICIAL UCV VIRTUAL (SUPERIOR IZQUIERDA)
+    // =========================================================================
+    if (ucvLogoImgRef.current && ucvLogoImgRef.current.complete) {
+      ctx.save();
+      const uW = 230;
+      const uH = 62;
+      const uX = 54;
+      const uY = 52;
+
+      // Contenedor blanco con borde elegante
+      drawRoundRectPath(ctx, uX - 4, uY - 4, uW + 8, uH + 8, 8);
+      ctx.fillStyle = "#ffffff";
+      ctx.fill();
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = "#d4af37";
+      ctx.stroke();
+
+      ctx.drawImage(ucvLogoImgRef.current, uX, uY, uW, uH);
+      ctx.restore();
+    }
+
+    // =========================================================================
+    // DIBUJAR LOGO WARMICLASS PRONOEI (SUPERIOR DERECHA)
+    // =========================================================================
+    if (warmiLogoImgRef.current && warmiLogoImgRef.current.complete) {
+      ctx.save();
+      const wSize = 64;
+      const wX = canvas.width - 54 - wSize;
+      const wY = 51;
+
+      // Medallón rojo institucional con aro dorado
+      drawRoundRectPath(ctx, wX - 4, wY - 4, wSize + 8, wSize + 8, 14);
+      ctx.fillStyle = "#8b0000";
+      ctx.fill();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#d4af37";
+      ctx.stroke();
+
+      ctx.drawImage(warmiLogoImgRef.current, wX, wY, wSize, wSize);
+      ctx.restore();
+    }
+
+    // Encabezado institucional central
     ctx.fillStyle = "#8b0000";
     ctx.font = "bold 26px 'Poppins', Arial";
     ctx.textAlign = "center";
-    ctx.fillText("UNIVERSIDAD CÉSAR VALLEJO", canvas.width / 2, 95);
+    ctx.fillText("UNIVERSIDAD CÉSAR VALLEJO", canvas.width / 2, 85);
 
     ctx.fillStyle = "#4a4a4a";
-    ctx.font = "italic 16px 'Roboto', Arial";
-    ctx.fillText("VICERRECTORADO ACADÉMICO – DIRECCIÓN DE UCV VIRTUAL", canvas.width / 2, 122);
-    ctx.fillText("En alianza estratégica con la Dirección Regional de Educación de Loreto (DREL)", canvas.width / 2, 144);
+    ctx.font = "bold 15px 'Roboto', Arial";
+    ctx.fillText("VICERRECTORADO ACADÉMICO – DIRECCIÓN DE UCV VIRTUAL", canvas.width / 2, 112);
+
+    ctx.fillStyle = "#666666";
+    ctx.font = "italic 14px 'Roboto', Arial";
+    ctx.fillText("En alianza estratégica con la Dirección Regional de Educación de Loreto (DREL)", canvas.width / 2, 134);
 
     // Título de otorgamiento
     ctx.fillStyle = "#b30000";
@@ -175,6 +264,42 @@ export default function CertificateGenerator({
           </p>
         </div>
 
+        {/* Banner Institucional de Respaldo Oficial UCV Virtual */}
+        <div className="mb-8 p-5 sm:p-7 rounded-3xl bg-gradient-to-r from-blue-900 via-blue-950 to-stone-950 text-white border border-blue-600/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 reveal">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 text-center sm:text-left">
+            <div className="p-2.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg shrink-0">
+              <img
+                src="/ucv-virtual-logo.png"
+                alt="Logo Oficial UCV Virtual"
+                className="h-12 sm:h-14 w-auto object-contain rounded-xl shadow-md"
+              />
+            </div>
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/25 border border-blue-400/30 text-blue-200 text-xs font-black uppercase tracking-wider mb-2">
+                <i className="fa-solid fa-graduation-cap text-amber-400"></i>
+                <span>Acreditación Universitaria Oficial SUNEDU / Ley 30220</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-black text-white font-['Poppins'] tracking-tight">
+                Certificación Académica por UCV Virtual
+              </h3>
+              <p className="text-xs sm:text-sm text-blue-100/80 mt-1 max-w-2xl leading-relaxed">
+                Cada certificado expedido a las Promotoras Educativas Comunitarias (PEC) cuenta con código de registro único, firma digital del Vicerrectorado Académico y validez en el escalafón magisterial.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <div className="text-center px-4 py-3 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm">
+              <span className="text-[11px] font-bold text-blue-200 block uppercase tracking-wider">Carga Lectiva</span>
+              <span className="text-xl font-black text-amber-400 font-['Poppins']">120 Horas</span>
+            </div>
+            <div className="text-center px-4 py-3 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm">
+              <span className="text-[11px] font-bold text-blue-200 block uppercase tracking-wider">Créditos Oficiales</span>
+              <span className="text-xl font-black text-emerald-400 font-['Poppins']">5.0</span>
+            </div>
+          </div>
+        </div>
+
         {/* Panel de personalización con Scroll Reveal */}
         <div className="bg-stone-50 p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm mb-8 reveal">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
@@ -225,6 +350,23 @@ export default function CertificateGenerator({
         {/* Visualización del Canvas (Adaptable y Responsive) con Scroll Reveal */}
         <div className="bg-stone-900/5 p-3 sm:p-6 rounded-3xl border border-stone-200 flex flex-col items-center reveal-scale">
           <div className="w-full max-w-4xl overflow-hidden rounded-2xl shadow-xl border border-stone-300 bg-white">
+            {/* Barra superior de previsualización con logo UCV Virtual */}
+            <div className="bg-stone-900 text-white px-4 py-2.5 flex items-center justify-between border-b border-stone-800">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/ucv-virtual-logo.png"
+                  alt="UCV Virtual"
+                  className="h-6 w-auto object-contain rounded"
+                />
+                <span className="text-[11px] font-bold text-stone-300 hidden sm:inline">
+                  Previsualización Digital del Certificado Académico Oficial
+                </span>
+              </div>
+              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold border border-emerald-500/30">
+                120 Horas • 5.0 Créditos Oficiales
+              </span>
+            </div>
+
             <canvas
               ref={canvasRef}
               className="w-full h-auto block"

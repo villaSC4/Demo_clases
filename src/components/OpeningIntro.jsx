@@ -118,9 +118,14 @@ export default function OpeningIntro({ onComplete }) {
 
         {/* Título de Marca */}
         <div className="space-y-1.5 mb-5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-amber-300 text-xs font-bold tracking-widest uppercase mb-1">
-            <i className="fa-solid fa-shield-halved text-xs text-amber-400"></i>
-            <span>Alianza UCV Virtual & DRE Loreto</span>
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-amber-300 text-xs font-bold tracking-wider uppercase mb-1 backdrop-blur-md shadow-md">
+            <img
+              src="/ucv-virtual-logo.png"
+              alt="Logo UCV Virtual"
+              className="h-6 w-auto object-contain rounded-md shadow-2xs"
+            />
+            <span className="text-white font-black">&</span>
+            <span>DRE Loreto</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-black text-white font-['Poppins'] tracking-tight">
